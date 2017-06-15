@@ -56,7 +56,14 @@ Despues de dar click nos saldra la siguiente ventana, debemos modificar la petic
 Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) después de dar click nos saldra el resultado.
 
   ![](http://i.imgur.com/fwG4Rc2.png)
-   
+  
+## Confirmación CFDI
+Para la peticion confirmacion de timbrado de un CFDI, deberá enviar las credenciales asignadas.
+
+Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **confirmacion_cfdi**:
+  
+  ![](http://i.imgur.com/GubQcAw.png)
+  
 ## Cancelar CFDI
 Para la cancelación son necesarias las credenciales asignadas, RFC del emisor, un arreglo de UUIDs, el archivo PFX convertido a cadena en base64 y el password del archivo PFX:
 
