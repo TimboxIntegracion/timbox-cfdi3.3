@@ -16,7 +16,7 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 
     ![](http://i.imgur.com/0ar7zY0.png)
     
-2. Lo siguiente es introducir los datos para generar el servicio, en initial WSDL ponemos el URL que utilizaremos en este caso staging, debemos de asegurarnos de que este seleccionado los siguientes puntos:
+2. Lo siguiente es introducir los datos para generar el servicio, en initial WSDL colocamos el URL que utilizaremos en este caso staging, debemos de asegurarnos de que este seleccionado los siguientes puntos:
     * **Create sample requests for all operations?**
     * **Stores all file paths in project relatively to project file (requires save)**
     
@@ -24,7 +24,7 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 
      ![](http://i.imgur.com/fn6qM7N.png)
      
-3. El siguiente paso es aceptar el directorio donde se guardara el proyecto.
+3. El siguiente paso es aceptar el directorio donde se guardará el proyecto.
 
      ![](http://i.imgur.com/UCq1NwS.png)
      
@@ -39,7 +39,7 @@ Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** d
 
      ![](http://i.imgur.com/wxkGZ25.png)
      
-Despues de dar click nos saldra la siguiente ventana, debemos modificar la petición usando nuestros datos, como el siguiente código:
+Después de dar click nos aparecerá la siguiente ventana, debemos modificar la petición usando nuestros datos, como el siguiente código:
 ![](http://i.imgur.com/YeoGMB6.png)
 ```    
  <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
@@ -66,7 +66,7 @@ Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** d
   
   ![](http://i.imgur.com/GubQcAw.png)
   
-Despues de dar click nos saldra la siguiente ventana, debemos modificar la petición usando nuestras credenciales, como el siguiente código:
+Despues de dar click nos saldrá la siguiente ventana, debemos modificar la petición usando nuestras credenciales, como el siguiente código:
 
 ![](http://i.imgur.com/rO23b9Q.png)
 
@@ -82,7 +82,7 @@ Despues de dar click nos saldra la siguiente ventana, debemos modificar la petic
 </soapenv:Envelope> 
  ```
   
-Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) después de dar click nos saldra el resultado.
+Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) nos saldra el resultado.
 
 ![](http://i.imgur.com/7ZPYvy1.png)
  
@@ -106,12 +106,12 @@ Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** d
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-Despues daremos click al boton ![](http://i.imgur.com/zp9cg7E.png) despues de dar click nos saldra el resultado.
+Despues daremos click al boton ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldra el resultado.
 
    ![](http://i.imgur.com/oE7IB3H.png)
 
 ## Crear archivo PFX
-Para poder crear el archivo PFX es necesario contrar con el certificado y la llave privada, la creación consta de tres comandos de consola que son los siguientes:
+Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada, la creación consta de tres comandos de consola que son los siguientes:
 
 ***Los certificados de prueba se encuentran en el proyecto en la carpeta certificados o puede descargarlos de [http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx)**
 
@@ -132,7 +132,7 @@ openssl pkcs12 -export -out 'CSD01_AAA010101AAA.pfx' -in 'CSD01_AAA010101AAA.cer
 
 
 ## Generar sello digital para los CFDIs
-Tal como lo especifica el anexo 20 en el inciso I Seccion B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
+Tal como lo específica el anexo 20 en el inciso I Seccion B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
 
 1. Generación de la digestion o hash.
 ```
