@@ -1,9 +1,14 @@
-# timbox-cfdi3.3
+# CFDI 3.3
+
 Documentación para la integración del anexo 20 versión 3.3 (CFDI).
 
-Ejemplo de comó utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html)
+Aviso:
 
-Para este ejemplo utilizamos la versión open source.
+El 1 de julio de 2017 entra en vigor la versión 3.3 de la factura, no obstante podrás continuar emitiendo facturas en la versión 3.2 hasta el 30 de noviembre; a partir del 1 de diciembre, la única versión válida para emitir las facturas será la versión 3.3
+
+[Documentación del SAT para emitir CFDI con la nueva versión 3.3](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/Anexo_20_version3.3.aspx)
+
+Ejemplo de comó utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html). Utilizamos la versión open source.
 
 Se deberá hacer uso de la URL que hace referencia al WSDL, en cada petición realizada:
 
