@@ -53,7 +53,7 @@ Después de dar click nos aparecerá la siguiente ventana, debemos modificar la 
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) después de dar click nos saldra el resultado.
+Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) una vez hecho esto nos saldra el resultado.
 
   ![](http://i.imgur.com/fwG4Rc2.png)
   
