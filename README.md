@@ -1,7 +1,7 @@
 # timbox-cfdi3.3
 Documentación para la integración del anexo 20 versión 3.3 (CFDI).
 
-Ejemplo de como utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html)
+Ejemplo de comó utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html)
 
 Para este ejemplo utilizamos la versión open source.
 
@@ -16,11 +16,11 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 
     ![](http://i.imgur.com/0ar7zY0.png)
     
-2. Lo siguiente es introducir los datos para generar el servicio, en initial WSDL colocamos el URL que utilizaremos en este caso staging, debemos de asegurarnos de que este seleccionado los siguientes puntos:
+2. Lo siguiente es introducir los datos para generar el servicio, en Initial WSDL colocamos el URL que utilizaremos en este caso staging, debemos de asegurarnos de que este seleccionado los siguientes puntos:
     * **Create sample requests for all operations?**
     * **Stores all file paths in project relatively to project file (requires save)**
     
-    Despues presionaremos el noton de OK
+    Después presionaremos el botón de OK
 
      ![](http://i.imgur.com/fn6qM7N.png)
      
@@ -28,12 +28,12 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 
      ![](http://i.imgur.com/UCq1NwS.png)
      
-4. A continuación nos mostrara el proyecto creado con las peticiones para cada uno de los métodos del servicio.
+4. A continuación, nos mostrara el proyecto creado con las peticiones para cada uno de los métodos del servicio.
 
      ![](http://i.imgur.com/250CyFV.png)
      
 ## Timbrar CFDI
-Para hacer una peticion de timbrado de un CFDI, deberá enviar las credenciales asignadas, asi como el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la pagina [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
+Para hacer una petición de timbrado de un CFDI, deberá enviar las credenciales asignadas, así como el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la página [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **timbrar_cfdi**:
 
@@ -53,14 +53,14 @@ Después de dar click nos aparecerá la siguiente ventana, debemos modificar la 
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) una vez hecho esto nos saldra el resultado.
+Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) una vez hecho esto nos saldrá el resultado.
 
   ![](http://i.imgur.com/fwG4Rc2.png)
   
 ## Confirmación CFDI
-La confirmación es única e irrepetible, Esto es para expedir un comprobante con importes o tipo de cambio fuera del rango establecido o en ambos casos. La confirmacion deben registrar valores alfanuméricos de 5 posiciones.
+La confirmación es única e irrepetible, Esto es para expedir un comprobante con importes o tipo de cambio fuera del rango establecido o en ambos casos. La confirmación deben registrar valores alfanuméricos de 5 posiciones.
 
-Para la peticion confirmacion de timbrado de un CFDI, deberá enviar las credenciales asignadas.
+Para la petición de confirmación de timbrado de un CFDI, deberá enviar las credenciales asignadas.
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **confirmacion_cfdi**:
   
@@ -106,7 +106,7 @@ Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** d
    </soapenv:Body>
 </soapenv:Envelope>
 ```
-Despues daremos click al boton ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldra el resultado.
+Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
 
    ![](http://i.imgur.com/oE7IB3H.png)
 
@@ -132,9 +132,9 @@ openssl pkcs12 -export -out 'CSD01_AAA010101AAA.pfx' -in 'CSD01_AAA010101AAA.cer
 
 
 ## Generar sello digital para los CFDIs
-Tal como lo específica el anexo 20 en el inciso I Seccion B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
+Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
 
-1. Generación de la digestion o hash.
+1. Generación de la digestión o hash.
 ```
 openssl dgst -sha256 -sign 'CSD01_AAA010101AAA.key.pem' -out 'digest.txt' 'cadena_original.txt'
 ```
