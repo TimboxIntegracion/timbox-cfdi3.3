@@ -58,12 +58,34 @@ Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) después de 
   ![](http://i.imgur.com/fwG4Rc2.png)
   
 ## Confirmación CFDI
+La confirmación es única e irrepetible, Esto es para expedir un comprobante con importes o tipo de cambio fuera del rango establecido o en ambos casos. La confirmacion deben registrar valores alfanuméricos de 5 posiciones.
+
 Para la peticion confirmacion de timbrado de un CFDI, deberá enviar las credenciales asignadas.
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **confirmacion_cfdi**:
   
   ![](http://i.imgur.com/GubQcAw.png)
   
+Despues de dar click nos saldra la siguiente ventana, debemos modificar la petición usando nuestras credenciales, como el siguiente código:
+
+![](http://i.imgur.com/rO23b9Q.png)
+
+```
+ <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:confirmacion_cfdi soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <username xsi:type="xsd:string">AAA010101000</username>
+         <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
+      </urn:confirmacion_cfdi>
+   </soapenv:Body>
+</soapenv:Envelope> 
+ ```
+  
+Despues daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) después de dar click nos saldra el resultado.
+
+![](http://i.imgur.com/7ZPYvy1.png)
+ 
 ## Cancelar CFDI
 Para la cancelación son necesarias las credenciales asignadas, RFC del emisor, un arreglo de UUIDs, el archivo PFX convertido a cadena en base64 y el password del archivo PFX:
 
