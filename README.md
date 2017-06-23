@@ -38,6 +38,24 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
      ![](http://i.imgur.com/250CyFV.png)
      
 ## Timbrar CFDI
+Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
+   
+   <b>Paso 1</b> 
+   
+   Construir el XML en base al Anexo 20 de los siguiente formatos:
+  
+-[Esquema XSD](http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd) estó nos define como construir el XML en su forma y sintaxis
+   
+-[Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
+   
+   <b>Paso 2</b> 
+   
+   Obtener la cadena Original basandose en el estandar XSLT (Secuencia de cadena Original)
+  
+   <b>Paso 3</b> 
+   
+   Generar el Sello Digital
+
 Para hacer una petición de timbrado de un CFDI, deberá enviar las credenciales asignadas, así como el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la página [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **timbrar_cfdi**:
@@ -116,7 +134,9 @@ Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez h
    ![](http://i.imgur.com/oE7IB3H.png)
 
 ## Crear archivo PFX
-Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada, la creación consta de tres comandos de consola que son los siguientes:
+Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada.
+
+Una vez teniendo esta informacion para la creación del PFX usamos el programa [OPENSSL](https://www.openssl.org/) en el cual utilizamos los siguientes tres comandos de consola que son los siguientes:
 
 ***Los certificados de prueba se encuentran en el proyecto en la carpeta certificados o puede descargarlos de [http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx)**
 
