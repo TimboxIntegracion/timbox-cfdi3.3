@@ -42,19 +42,19 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
    **<b>Paso 1</b>**
    
-   -Construir el XML en base al Anexo 20 de los siguiente formatos:
+   Construir el XML en base al Anexo 20 de los siguiente formatos:
   
--[Esquema XSD](http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd) estó nos define como construir el XML en su forma y sintaxis
+[Esquema XSD](http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd) estó nos define como construir el XML en su forma y sintaxis
    
--[Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
+[Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
    
    **<b>Paso 2</b>** 
    
-   -Obtener la cadena Original basandose en el estandar XSLT (Secuencia de cadena Original)
+   Obtener la cadena Original basandose en el estandar XSLT (Secuencia de cadena Original)
   
    **<b>Paso 3</b>** 
    
-   -Generar el Sello Digital
+   Generar el Sello Digital
 
 Para hacer una petición de timbrado de un CFDI, deberá enviar las credenciales asignadas, así como el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la página [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
 
