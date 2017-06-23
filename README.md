@@ -44,7 +44,7 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
    Construir el XML en base al Anexo 20 de los siguiente formatos:
   
-[Esquema XSD](http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd) estó nos define como construir el XML en su forma y sintaxis
+[Esquema XSD](http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd) Estó nos define como construir el XML en su forma y sintaxis
    
 [Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
    
