@@ -40,7 +40,7 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 ## Timbrar CFDI
 Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
-   <b>Paso 1</b> 
+   **<b>Paso 1</b>**
    
    Construir el XML en base al Anexo 20 de los siguiente formatos:
   
@@ -48,11 +48,11 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
 -[Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
    
-   <b>Paso 2</b> 
+   **<b>Paso 2</b>** 
    
    Obtener la cadena Original basandose en el estandar XSLT (Secuencia de cadena Original)
   
-   <b>Paso 3</b> 
+   **<b>Paso 3</b>** 
    
    Generar el Sello Digital
 
