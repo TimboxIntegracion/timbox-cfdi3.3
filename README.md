@@ -37,10 +37,10 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 
      ![](http://i.imgur.com/250CyFV.png)
      
-## Timbrar CFDI
+## Pasos a considerar antes de Timbrar CFDI
 Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
-   **<b>Paso 1</b>**
+**<b>Paso 1</b>**
    
    Construir el XML en base al Anexo 20 de acuerdo al estándar definido por el SAT:
   
@@ -48,15 +48,28 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
 - [Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
    
-   **<b>Paso 2</b>** 
+**<b>Paso 2</b>** 
    
    Obtener la cadena Original basandose en el estandar XSLT (Secuencia de cadena Original)
    
    [Estándar de transformación](http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt)
   
-   **<b>Paso 3</b>** 
+**<b>Paso 3</b>**
    
-   Generar el Sello Digital
+Generar sello digital para los CFDIs
+Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
+
+1. Generación de la digestión o hash.
+```
+openssl dgst -sha256 -sign 'CSD01_AAA010101AAA.key.pem' -out 'digest.txt' 'cadena_original.txt'
+```
+
+2. Creación del archivo PEM de la llave privada.
+```
+openssl enc -in 'digest.txt' -out 'sello.txt' -base64 -A -K 'CSD01_AAA010101AAA.key.pem' 
+```
+
+## Timbrar CFDI
 
 Para hacer una petición de timbrado de un CFDI, deberá enviar las credenciales asignadas, así como el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la página [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
 
@@ -158,15 +171,4 @@ openssl pkcs12 -export -out 'CSD01_AAA010101AAA.pfx' -in 'CSD01_AAA010101AAA.cer
 ```
 
 
-## Generar sello digital para los CFDIs
-Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
 
-1. Generación de la digestión o hash.
-```
-openssl dgst -sha256 -sign 'CSD01_AAA010101AAA.key.pem' -out 'digest.txt' 'cadena_original.txt'
-```
-
-2. Creación del archivo PEM de la llave privada.
-```
-openssl enc -in 'digest.txt' -out 'sello.txt' -base64 -A -K 'CSD01_AAA010101AAA.key.pem' 
-```
