@@ -14,29 +14,6 @@ Se deberá hacer uso de la URL que hace referencia al WSDL, en cada petición re
 
 - [Timbox Pruebas](https://staging.ws.timbox.com.mx/timbrado_cfdi33/wsdl)
 
-## Creación del proyecto en SOAP UI
-Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el URL Servicio.
-
-1. El primer paso es crear el proyecto.
-
-    ![](http://i.imgur.com/0ar7zY0.png)
-    
-2. Lo siguiente es introducir los datos para generar el servicio, en Initial WSDL colocamos el URL que utilizaremos en este caso staging, debemos de asegurarnos de que este seleccionado los siguientes puntos:
-    * **Create sample requests for all operations?**
-    * **Stores all file paths in project relatively to project file (requires save)**
-    
-    Después presionaremos el botón de OK
-
-     ![](http://i.imgur.com/fn6qM7N.png)
-     
-3. El siguiente paso es aceptar el directorio donde se guardará el proyecto.
-
-     ![](http://i.imgur.com/UCq1NwS.png)
-     
-4. A continuación, nos mostrara el proyecto creado con las peticiones para cada uno de los métodos del servicio.
-
-     ![](http://i.imgur.com/250CyFV.png)
-     
 ## Pasos a considerar antes de Timbrar CFDI
 Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
@@ -73,6 +50,30 @@ openssl dgst -sha256 -sign 'CSD01_AAA010101AAA.key.pem' -out 'digest.txt' 'caden
 ```
 openssl enc -in 'digest.txt' -out 'sello.txt' -base64 -A -K 'CSD01_AAA010101AAA.key.pem' 
 ```
+
+## Creación del proyecto en SOAP UI
+Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el URL Servicio.
+
+1. El primer paso es crear el proyecto.
+
+    ![](http://i.imgur.com/0ar7zY0.png)
+    
+2. Lo siguiente es introducir los datos para generar el servicio, en Initial WSDL colocamos el URL que utilizaremos en este caso staging, debemos de asegurarnos de que este seleccionado los siguientes puntos:
+    * **Create sample requests for all operations?**
+    * **Stores all file paths in project relatively to project file (requires save)**
+    
+    Después presionaremos el botón de OK
+
+     ![](http://i.imgur.com/fn6qM7N.png)
+     
+3. El siguiente paso es aceptar el directorio donde se guardará el proyecto.
+
+     ![](http://i.imgur.com/UCq1NwS.png)
+     
+4. A continuación, nos mostrara el proyecto creado con las peticiones para cada uno de los métodos del servicio.
+
+     ![](http://i.imgur.com/250CyFV.png)
+     
 
 ## Timbrar CFDI
 
