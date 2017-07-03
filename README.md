@@ -34,7 +34,7 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
  Ejemplo de una Cadena Original
  
   ```
-  ||3.3|2017-06-30T11:58:45|01|30001000000300023708|1510.00|MXN|1|1751.60|I|PUE|06300|AAA010101AAA1|SENTIENT SA DE CV|601|IAD121214B34|IT & SW Development Solutions de Mexico S de RL de CV|P01|10122100|5|M74|Kilo|Prueba Catalogos Nuevos|250.00|1250.00|24111500|1|KGM|kg|traslucida 90x90 cm. cal. 200|22.00|22.00|13101712|10|KGM|KG|POLIETILENO DE BAJA DENSIDAD|23.80|238.00|241.60||
+||3.3|2017-07-03T12:51:09|01|30001000000300023708|1510.00|MXN|1|1751.60|I|PUE|06300|AAA010101AAA|SENTIENT SA DE CV|601|IAD121214B34|IT & SW Development Solutions de Mexico S de RL de CV|P01|10122100|5|M74|Kilo|Prueba Catalogos Nuevos|250.00|1250.00|1250.00|002|Tasa|0.160000|200.00|24111500|1|KGM|kg|traslucida 90x90 cm. cal. 200|22.00|22.00|22.00|002|Tasa|0.160000|3.52|13101712|10|KGM|KG|POLIETILENO DE BAJA DENSIDAD|23.80|238.00|238.00|002|Tasa|0.160000|38.08|002|Tasa|0.160000|241.60|241.60||
   ```
 **<b>Paso 3</b>**
    
@@ -49,6 +49,10 @@ openssl dgst -sha256 -sign 'CSD01_AAA010101AAA.key.pem' -out 'digest.txt' 'caden
 2. Creación del archivo PEM de la llave privada.
 ```
 openssl enc -in 'digest.txt' -out 'sello.txt' -base64 -A -K 'CSD01_AAA010101AAA.key.pem' 
+```
+Ejemplo de la Generación del Sello
+```
+Vve+KIMdhPjSiPoA+oFPOI1+DHhbIZpAfjHDjdvuDpN9ga4g76DS90JDlY1mwXAOSOwTlA3YUSwFSt23piTUz9fd+e79xhEzLis6Tiarir0EwADu5tHtZezVMzkD4q4hf+qnpFwx9/F8pUd8eU0T6+fvchQyDE8JhTsTAVdKeD7UGjEwr8lbQ0QVVqXf0i3LWLkkrw0IGt4+NKMgp2WcmDmMkcf+fLYBFJmtrb2KQEgG6nc3IG5Bjik2t34BtYrGWfH9FQR9weBitJRMLfq4Lsmv++j9HlehnCdTlHAzEHpUCvSRw8HPQhhMNBg3zYMAWgM9FpPaUuTKFlkjHJbT4w==
 ```
 
 ## Creación del proyecto en SOAP UI
