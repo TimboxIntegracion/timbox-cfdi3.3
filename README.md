@@ -53,7 +53,12 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    Obtener la cadena Original basandose en el estandar XSLT (Secuencia de cadena Original)
    
    [Estándar de transformación](http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt)
-  
+ 
+ Ejemplo de una Cadena Original
+ 
+  ```
+  ||3.3|2017-06-30T11:58:45|01|30001000000300023708|1510.00|MXN|1|1751.60|I|PUE|06300|AAA010101AAA1|SENTIENT SA DE CV|601|IAD121214B34|IT & SW Development Solutions de Mexico S de RL de CV|P01|10122100|5|M74|Kilo|Prueba Catalogos Nuevos|250.00|1250.00|24111500|1|KGM|kg|traslucida 90x90 cm. cal. 200|22.00|22.00|13101712|10|KGM|KG|POLIETILENO DE BAJA DENSIDAD|23.80|238.00|241.60||
+  ```
 **<b>Paso 3</b>**
    
 Generar sello digital para los CFDIs
