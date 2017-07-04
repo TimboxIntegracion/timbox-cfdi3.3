@@ -27,7 +27,7 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
 **<b>Paso 2</b>** 
    
-   Obtener la cadena Original basandose en el estándar XSLT (Secuencia de cadena Original), para realizar este paso utilizamos la siguiente herramienta  [XSL tranformer](https://www.freeformatter.com/xsl-transformer.html#ad-output) donde subiremos el archivo Estándar de tranformacion y el XML.
+   Obtener la cadena Original basandose en el estándar XSLT (Secuencia de cadena Original), para realizar este paso utilizamos la siguiente herramienta  [XSL tranformer](https://www.freeformatter.com/xsl-transformer.html#ad-output) donde subiremos el archivo Estándar de tranformación y el XML.
    
    [Estándar de transformación](http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt)
  
