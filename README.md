@@ -39,7 +39,7 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
 **<b>Paso 3</b>**
    
 Generar sello digital para los CFDIs
-Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
+Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet". Para esto usamos la siguiente herramienta, el programa [OPENSSL](https://www.openssl.org/) en el cual utilizamos los siguientes comandos de consola:
 
 1. Obtener el PEM del certificado y el contenido sin los encabezados agregarlo al atributo Certificado en XML.
 ```
@@ -175,7 +175,7 @@ Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez h
 ## Crear archivo PFX
 Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada ya convertidas al formato PEM.
 
-Una vez teniendo esta informacion para la creación del PFX usamos el programa [OPENSSL](https://www.openssl.org/) en el cual utilizamos los siguientes tres comandos de consola que son los siguientes:
+Una vez teniendo esta informacion para la creación del PFX usamos de nuevo el programa OPENSSL en el cual utilizamos el siguiente comando:
 
 ***Los certificados de prueba se encuentran en el proyecto en la carpeta certificados o puede descargarlos de [http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx)**
 
