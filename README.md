@@ -41,12 +41,20 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
 Generar sello digital para los CFDIs
 Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet"
 
-1. Generación de la digestión o hash.
+1. Obtener el PEM del certificado y el contenido sin los encabezados agregarlo al atributo Certificado en XML.
+```
+openssl x509 -in 'CSD01_AAA010101AAA.cer' -inform DER -out 'CSD01_AAA010101AAA.cer.pem' -outform PEM
+```
+2. Obtener el PEM de la llave, con el cual se realizara la firma digital de la cadena original
+```
+openssl pkcs8 -inform DER -in 'CSD01_AAA010101AAA.key' -passin pass:12345678a -out 'CSD01_AAA010101AAA.key.pem'
+```
+3. Generación de la digestión o hash.
 ```
 openssl dgst -sha256 -sign 'CSD01_AAA010101AAA.key.pem' -out 'digest.txt' 'cadena_original.txt'
 ```
 
-2. Creación del archivo PEM de la llave privada.
+4. Creación del archivo PEM de la llave privada.
 ```
 openssl enc -in 'digest.txt' -out 'sello.txt' -base64 -A -K 'CSD01_AAA010101AAA.key.pem' 
 ```
@@ -165,23 +173,13 @@ Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez h
    ![](http://i.imgur.com/oE7IB3H.png)
 
 ## Crear archivo PFX
-Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada.
+Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada ya convertidas al formato PEM.
 
 Una vez teniendo esta informacion para la creación del PFX usamos el programa [OPENSSL](https://www.openssl.org/) en el cual utilizamos los siguientes tres comandos de consola que son los siguientes:
 
 ***Los certificados de prueba se encuentran en el proyecto en la carpeta certificados o puede descargarlos de [http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx)**
 
-1. Creación del archivo PEM del certificado.
-```
-openssl x509 -in 'CSD01_AAA010101AAA.cer' -inform DER -out 'CSD01_AAA010101AAA.cer.pem' -outform PEM
-```
-
-2. Creación del archivo PEM de la llave privada.
-```
-openssl pkcs8 -inform DER -in 'CSD01_AAA010101AAA.key' -passin pass:12345678a -out 'CSD01_AAA010101AAA.key.pem'
-```
-
-3. Creación del archivo PFX.
+1. Creación del archivo PFX.
 ```
 openssl pkcs12 -export -out 'CSD01_AAA010101AAA.pfx' -in 'CSD01_AAA010101AAA.cer.pem' -inkey 'CSD01_AAA010101AAA.key.pem' -password pass:12345678a
 ```
