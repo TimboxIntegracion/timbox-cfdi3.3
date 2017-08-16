@@ -13,6 +13,7 @@ Ejemplo de comó utilizar el servicio con [SOAP UI](https://www.soapui.org/downl
 Se deberá hacer uso de la URL que hace referencia al WSDL, en cada petición realizada:
 
 - [Timbox Pruebas](https://staging.ws.timbox.com.mx/timbrado_cfdi33/wsdl)
+- [Timbox Producción](https://sistema.timbox.com.mx/timbrado_cfdi33/wsdl)
 
 ## Pasos a considerar antes de Timbrar CFDI
 Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
