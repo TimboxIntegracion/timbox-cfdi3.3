@@ -41,6 +41,8 @@ Es importante mencionar que este no es el número de certificado, para obtenerlo
  3  0  0  0  1  0  0  0  0  0  0  3  0  0  0  2  3  7  0  8
 30001000000300023708
   ```
+En este ejemplo el número de certificado sería: 30001000000300023708
+
 **<b>Paso 2</b>** 
    
    Obtener la cadena Original basandose en el estándar XSLT (Secuencia de cadena Original), para realizar este paso utilizamos la siguiente herramienta  [XSL tranformer](https://www.freeformatter.com/xsl-transformer.html#ad-output) donde subiremos el archivo Estándar de tranformación y el XML.
