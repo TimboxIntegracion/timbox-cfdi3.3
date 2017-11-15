@@ -26,6 +26,21 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
    
 - [Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
    
+**<b>Paso 1.1 Obtener número de certificado</b>**
+Si no se cuenta con el número de certificado se puede obtener utilizando un comando de OpenSSL:
+  ```
+openssl x509 -inform DER -in "CSD01_AAA010101AAA.cer" -noout -serial
+  ```
+Ejemplo de output:
+  ```
+serial=3330303031303030303030333030303233373038
+  ```
+Es importante mencionar que este no es el número de certificado, para obtenerlo se debe eliminar el '3' en cada par de la cadena de 40 caracteres. Ejemplo (hay espacio entre los pares para poder visualizar facilmente):
+  ```
+33 30 30 30 31 30 30 30 30 30 30 33 30 30 30 32 33 37 30 38
+ 3  0  0  0  1  0  0  0  0  0  0  3  0  0  0  2  3  7  0  8
+30001000000300023708
+  ```
 **<b>Paso 2</b>** 
    
    Obtener la cadena Original basandose en el estándar XSLT (Secuencia de cadena Original), para realizar este paso utilizamos la siguiente herramienta  [XSL tranformer](https://www.freeformatter.com/xsl-transformer.html#ad-output) donde subiremos el archivo Estándar de tranformación y el XML.
