@@ -45,7 +45,7 @@ En este ejemplo el número de certificado sería: 30001000000300023708
 
 **<b>Paso 2</b>** 
    
-   Obtener la cadena Original basandose en el estándar XSLT (Secuencia de cadena Original), para realizar este paso utilizamos la siguiente herramienta  [XSL tranformer](https://www.freeformatter.com/xsl-transformer.html#ad-output) donde subiremos el archivo Estándar de tranformación y el XML.
+   Obtener la cadena Original basandose en el estándar XSLT (Secuencia de cadena Original), para realizar este paso utilizamos la siguiente herramienta  [XSL Test Tool](http://xslttest.appspot.com/) donde subiremos el archivo Estándar de tranformación y el XML.
    
    [Estándar de transformación](http://www.sat.gob.mx/sitio_internet/cfd/3/cadenaoriginal_3_3/cadenaoriginal_3_3.xslt)
  
