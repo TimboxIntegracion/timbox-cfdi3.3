@@ -35,7 +35,7 @@ Ejemplo de output:
   ```
 serial=3330303031303030303030333030303233373038
   ```
-Es importante mencionar que este no es el número de certificado, para obtenerlo se debe eliminar el '3' en cada par de la cadena de 40 caracteres. Ejemplo (hay espacio entre los pares para poder visualizar facilmente):
+Es importante mencionar que este no es el número de certificado, para obtenerlo se debe eliminar el '3' en cada posición impar de la cadena de 40 caracteres. Ejemplo (hay espacio entre los pares para poder visualizar facilmente):
   ```
 33 30 30 30 31 30 30 30 30 30 30 33 30 30 30 32 33 37 30 38
  3  0  0  0  1  0  0  0  0  0  0  3  0  0  0  2  3  7  0  8
