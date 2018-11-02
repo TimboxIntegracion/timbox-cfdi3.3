@@ -12,8 +12,14 @@ Ejemplo de comó utilizar el servicio con [SOAP UI](https://www.soapui.org/downl
 
 Se deberá hacer uso de la URL que hace referencia al WSDL, en cada petición realizada:
 
+Timbrado:
+
 - [Timbox Pruebas](https://staging.ws.timbox.com.mx/timbrado_cfdi33/wsdl)
 - [Timbox Producción](https://sistema.timbox.com.mx/timbrado_cfdi33/wsdl)
+
+Cancelacion:
+- [Timbox Pruebas](https://staging.ws.timbox.com.mx/cancelacion/wsdl)
+- [Timbox Producción](https://sistema.timbox.com.mx/cancelacion/wsdl)
 
 ## Pasos a considerar antes de Timbrar CFDI
 Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
@@ -131,71 +137,32 @@ Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) una vez hec
 
   ![](http://i.imgur.com/fwG4Rc2.png)
    
-## Cancelar CFDI
-Para la cancelación son necesarias las credenciales asignadas, RFC del emisor, un arreglo de UUIDs, el archivo PFX convertido a cadena en base64 y el password del archivo PFX:
+## Cancelar CFDI 
+Para la cancelar_cfdi son necesarias las credenciales asignadas, RFC del emisor, un arreglo de nodos folios (el cual debe contener los elementos UUID, RFC del Receptor y Total), el certificado y llave convertidos en PEM (el contenido del archivo)
 
 Crear un cliente para hacer la petición de cancelación al webservice:
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **cancelar_cfdi**:
 
-![](http://i.imgur.com/py8K2eL.png)
-```
-<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <urn:cancelar_cfdi soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-         <username xsi:type="xsd:string">AAA010101000</username>
-         <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
-         <rfcemisor xsi:type="xsd:string">AAA010101AAA</rfcemisor>
-         <uuids xsi:type="urn:uuid">
-            <!--Zero or more repetitions:-->
-            <uuid xsi:type="xsd:string">9C6F27D1-608A-4468-B57A-AF6C293F5728</uuid>
-         </uuids>
-         <pfxbase64 xsi:type="xsd:string">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</pfxbase64>
-         <pfxpassword xsi:type="xsd:string">12345678a</pfxpassword>
-      </urn:cancelar_cfdi>
-   </soapenv:Body>
-</soapenv:Envelope>
-```
-Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
-
-   ![](http://i.imgur.com/oE7IB3H.png)
-
-## Crear archivo PFX
-Para poder crear el archivo PFX es necesario contar con el certificado y la llave privada ya convertidas al formato PEM.
-
-Una vez teniendo esta informacion para la creación del PFX usamos de nuevo el programa OPENSSL en el cual utilizamos el siguiente comando:
-
-***Los certificados de prueba se encuentran en el proyecto en la carpeta certificados o puede descargarlos de [http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/certificado_sello_digital.aspx)**
-
-1. Creación del archivo PFX.
-```
-openssl pkcs12 -export -out 'CSD01_AAA010101AAA.pfx' -in 'CSD01_AAA010101AAA.cer.pem' -inkey 'CSD01_AAA010101AAA.key.pem' -password pass:12345678a
-```
-
-## Cancelar CFDI CERTS
-Para la cancelación_cfdi_certs son necesarias las credenciales asignadas, RFC del emisor, un arreglo de UUIDs, el certificado y llave convertidos en PEM (el contenido del archivo)y por ultimo su contraseña:
-
-Crear un cliente para hacer la petición de cancelación al webservice:
-
-Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **cancelar_cfdi_certs**:
-
-![](http://i.imgur.com/eGGRh43.png)
+![](https://i.imgur.com/RVyGwDm.png)
 
 ```
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <urn:cancelar_cfdi_certs soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-         <username xsi:type="xsd:string">AAA010101000</username>
-         <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
-         <rfcemisor xsi:type="xsd:string">AAA010101AAA</rfcemisor>
-         <uuids xsi:type="urn:uuid">
-            <!--Zero or more repetitions:-->
-            <uuid xsi:type="xsd:string">9C6F27D1-608A-4468-B57A-AF6C293F5728</uuid>
-         </uuids>
-         <cert_pem xsi:type="xsd:string">-----BEGIN CERTIFICATE-----
-MIIF+TCCA+GgAwIBAgIUMzAwMDEwMDAwMDAzMDAwMjM3MDgwDQYJKoZIhvcNAQEL
+         <soapenv:Header/>
+         <soapenv:Body>
+            <urn:cancelar_cfdi soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+               <username xsi:type="xsd:string">AAA010101000</username>
+               <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
+               <rfc_emisor xsi:type="xsd:string">PZA000413788</rfc_emisor>
+               <folios xsi:type="urn:folios">
+                  <folio>
+                    <uuid xsi:type="xsd:string">27863E31-0E25-43CE-B148-3764D94C1EEA</uuid>
+                    <rfc_receptor xsi:type="xsd:string">TME960709LR2</rfc_receptor>
+                    <total xsi:type="xsd:string">5001</total>
+                  </folio>
+               </folios>
+               <cert_pem xsi:type="xsd:string">-----BEGIN CERTIFICATE-----
+MIIGJzCCBA+gAwIBAgIUMjAwMDEwMDAwMDAzMDAwMjI3NjAwDQYJKoZIhvcNAQEL
 BQAwggFmMSAwHgYDVQQDDBdBLkMuIDIgZGUgcHJ1ZWJhcyg0MDk2KTEvMC0GA1UE
 CgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNV
 BAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNp
@@ -203,66 +170,67 @@ w7NuMSkwJwYJKoZIhvcNAQkBFhphc2lzbmV0QHBydWViYXMuc2F0LmdvYi5teDEm
 MCQGA1UECQwdQXYuIEhpZGFsZ28gNzcsIENvbC4gR3VlcnJlcm8xDjAMBgNVBBEM
 BTA2MzAwMQswCQYDVQQGEwJNWDEZMBcGA1UECAwQRGlzdHJpdG8gRmVkZXJhbDES
 MBAGA1UEBwwJQ295b2Fjw6FuMRUwEwYDVQQtEwxTQVQ5NzA3MDFOTjMxITAfBgkq
-hkiG9w0BCQIMElJlc3BvbnNhYmxlOiBBQ0RNQTAeFw0xNzA1MTgwMzU0NTZaFw0y
-MTA1MTgwMzU0NTZaMIHlMSkwJwYDVQQDEyBBQ0NFTSBTRVJWSUNJT1MgRU1QUkVT
-QVJJQUxFUyBTQzEpMCcGA1UEKRMgQUNDRU0gU0VSVklDSU9TIEVNUFJFU0FSSUFM
-RVMgU0MxKTAnBgNVBAoTIEFDQ0VNIFNFUlZJQ0lPUyBFTVBSRVNBUklBTEVTIFND
-MSUwIwYDVQQtExxBQUEwMTAxMDFBQUEgLyBIRUdUNzYxMDAzNFMyMR4wHAYDVQQF
-ExUgLyBIRUdUNzYxMDAzTURGUk5OMDkxGzAZBgNVBAsUEkNTRDAxX0FBQTAxMDEw
-MUFBQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJdUcsHIEIgwivvA
-antGnYVIO3+7yTdD1tkKopbL+tKSjRFo1ErPdGJxP3gxT5O+ACIDQXN+HS9uMWDY
-naURalSIF9COFCdh/OH2Pn+UmkN4culr2DanKztVIO8idXM6c9aHn5hOo7hDxXMC
-3uOuGV3FS4ObkxTV+9NsvOAV2lMe27SHrSB0DhuLurUbZwXm+/r4dtz3b2uLgBc+
-Diy95PG+MIu7oNKM89aBNGcjTJw+9k+WzJiPd3ZpQgIedYBD+8QWxlYCgxhnta3k
-9ylgXKYXCYk0k0qauvBJ1jSRVf5BjjIUbOstaQp59nkgHh45c9gnwJRV618NW0fM
-eDzuKR0CAwEAAaMdMBswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBsAwDQYJKoZI
-hvcNAQELBQADggIBABKj0DCNL1lh44y+OcWFrT2icnKF7WySOVihx0oR+HPrWKBM
-Xxo9KtrodnB1tgIx8f+Xjqyphhbw+juDSeDrb99PhC4+E6JeXOkdQcJt50Kyodl9
-URpCVWNWjUb3F/ypa8oTcff/eMftQZT7MQ1Lqht+xm3QhVoxTIASce0jjsnBTGD2
-JQ4uT3oCem8bmoMXV/fk9aJ3v0+ZIL42MpY4POGUa/iTaawklKRAL1Xj9IdIR06R
-K68RS6xrGk6jwbDTEKxJpmZ3SPLtlsmPUTO1kraTPIo9FCmU/zZkWGpd8ZEAAFw+
-ZfI+bdXBfvdDwaM2iMGTQZTTEgU5KKTIvkAnHo9O45SqSJwqV9NLfPAxCo5eRR2O
-Gibd9jhHe81zUsp5GdE1mZiSqJU82H3cu6BiE+D3YbZeZnjrNSxBgKTIf8w+KNYP
-M4aWnuUMl0mLgtOxTUXi9MKnUccq3GZLA7bx7Zn211yPRqEjSAqybUMVIOho6aqz
-kfc3WLZ6LnGU+hyHuZUfPwbnClb7oFFz1PlvGOpNDsUb0qP42QCGBiTUseGugAzq
-OP6EYpVPC73gFourmdBQgfayaEvi3xjNanFkPlW1XEYNrYJB4yNjphFrvWwTY86v
-L2o8gZN0Utmc5fnoBTfM9r2zVKmEi6FUeJ1iaDaVNv47te9iS1ai4V4vBY8r
+hkiG9w0BCQIMElJlc3BvbnNhYmxlOiBBQ0RNQTAeFw0xNjEwMjEyMDI1NTNaFw0y
+MDEwMjEyMDI1NTNaMIIBEjE6MDgGA1UEAxMxSU5EVVNUUklBUyBQQVJBIEVMIEhP
+R0FSIEEgTEEgVkFOR1VBUkRJQSBTQSBERSBDVjE6MDgGA1UEKRMxSU5EVVNUUklB
+UyBQQVJBIEVMIEhPR0FSIEEgTEEgVkFOR1VBUkRJQSBTQSBERSBDVjE6MDgGA1UE
+ChMxSU5EVVNUUklBUyBQQVJBIEVMIEhPR0FSIEEgTEEgVkFOR1VBUkRJQSBTQSBE
+RSBDVjElMCMGA1UELRMcUFpBMDAwNDEzNzg4IC8gSEVHVDc2MTAwMzRTMjEeMBwG
+A1UEBRMVIC8gSEVHVDc2MTAwM01ERlJOTjA5MRUwEwYDVQQLFAxQcnVlYmFzX0NG
+REkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCJUeq8lhyXM8Kamegn
+YTt2UsISrihy/vhw+2Bt+ULUczpQtZ9rDTeMFXwtKoocAPd31yfqPdlj9dxKbQS5
+PmDe3rmpDvcNbGVmfKOMxCWzrWikDVhJVC1++lI6leMnOZHBymbMct2rslUoNq1x
+hSG/2R97hI7Cgshge9CvNFyyD6U3h+s7tAggWgGhIqTf/SI6TAwzkp+N6ocu+xdp
+6d7PjWP8Jao0E3Gcf79Uy7Mxhxh5Zi7A4e1VQHd392De3ZzSewCCeQUF9fqI7OGZ
+OrEsEC66nb5SiyP+qzIQWUCKrMgg6gWzeXfLYzewFLpFK6fxYA1k7C7INQcENb40
+Vk9/AgMBAAGjHTAbMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMA0GCSqGSIb3
+DQEBCwUAA4ICAQBz1OZj4/BN+o2BYbb16n3uy5SELXZhJR2uncGLLqz6rddFJsJD
+tXjSv0lXs/daTnc8ZcrbT4pVOKGS4ZiQEwvtZbV4J+6wXryOAv03nyKxvKbW1efT
+Z2f3ZC0POtr+aBhMcCdmYBpWP37bW+FYQcCXKYszlv0sFKo3WG8PVTHe1+pWeXpv
+FY8rjWu6G+u/qkokQMld3ZPuvttSRkpQgTPhjZ7HYBPJOLzFEapURn0TiaK9rFNF
+l9xeJntgaYkwMlP6rpp/uUaVtf4aLN4HJ1zpl4OKkMEnZDqaq8tGnSmNtmqvXnGi
+3fWn7yR2KNgNVFBH1FZ3KKKj760ctniqaoh1JiB/VZDNKnTyfhulvNtJogR0jLyr
+4xjRoTXvd6F4119SNq/0lYaa/qLpwJEv/7yoCvwfH48rqhIt+jPcVxchP9jCFVuD
+uIGdhn8mywqqKuZIhgBstzcZFgAnJw5McQW8Pzo+r2Pf4fi3Fq6t9d8SOZ0YAkj+
+LJK1CTGhydisk3alVnhjHZI2i4HltgWl8lcl2VyK8Mrtl9pADwgJdA6ccD//d6O/
+ECjMNYaFsC3L8XTc9+ck97zQqlDvYPCzQJtXyIUdzvvV0bLpavwkNipb16QbSHkO
+hjdkNQmGDnadkZX75k0rcqmRiCr2vHVxkeiUL1Pasdp3dVUvX7ATEqQMZw==
 -----END CERTIFICATE-----
 </cert_pem>
-         <llave_pem xsi:type="xsd:string">-----BEGIN PRIVATE KEY-----
-MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCXVHLByBCIMIr7
-wGp7Rp2FSDt/u8k3Q9bZCqKWy/rSko0RaNRKz3RicT94MU+TvgAiA0Fzfh0vbjFg
-2J2lEWpUiBfQjhQnYfzh9j5/lJpDeHLpa9g2pys7VSDvInVzOnPWh5+YTqO4Q8Vz
-At7jrhldxUuDm5MU1fvTbLzgFdpTHtu0h60gdA4bi7q1G2cF5vv6+Hbc929ri4AX
-Pg4sveTxvjCLu6DSjPPWgTRnI0ycPvZPlsyYj3d2aUICHnWAQ/vEFsZWAoMYZ7Wt
-5PcpYFymFwmJNJNKmrrwSdY0kVX+QY4yFGzrLWkKefZ5IB4eOXPYJ8CUVetfDVtH
-zHg87ikdAgMBAAECggEALS8Z1KJXzVIxLVoWcRh0kAcxPMJlIgsvaz6xrTTaf2Ui
-mcAjIvMuXPZTbR/MEuD4SS+Pq1xMeoz8UV5cM50vkm3QLoU9n0SyrQVJQ+6q4Npl
-9SwuMqNXVS/l1YEEcJNTYwq7rE5OtAYIPn7s7i5dhJIUKgeZsu7xcf9VpdLgjVCD
-qGgJw/EfhagR7iPF+PKoeyRyBZI9xuHmtElHVgn2/Qv/16UJv0YpAqRgVq7YQzZC
-c7yo0Y2+3dqHabRg+MnIKkN4pBFBzYxsjwM7YUDk/8zFlF5kwCS74ep0JWWSYAJ1
-3DYDtCYSyWk1DvxX9Srv/S2htZM6MnhboafjLch4QQKBgQDRGGLpYdqGt6/cXKQe
-JGWFrG33AMiYKrd4NOw7LK7kzrQESeaeAXSwr2eOnNV3tDMyslkjpC05m3Lbefsh
-Ul6Qj/Qj9PEIpv7e4X4r++O/FsA9X6iQFicMEDzRYYjm4AfFggYrhzmjXh2rNACL
-KRX5i9wIRGQuoAG7KuZyYWSBuwKBgQC5Rsv75S6FNUpKe8RC2nw13Vaf9uua2W1+
-spg2pWfKqw88vvFATQOj9A9aFJ+wqrvwRziua5xtbch9gHK7M9Nnl565Tk8muueO
-OUBaFeHYXsDaYZfTFILOZU4/b6//r6QK2cO892VXyUydbRXavCpRX8s2EoxtwfFG
-mgbStX+HBwKBgQCICHKJXXU7QhPyrH7FcW5vKgAcu3DFtrzIQr4RvX9HMsdhJucX
-kuDk9ijMWnJyv1Szvd5KVsxpdx2hdlmQkzMcn9r47alGtMaKIG/ik6zWrCmDhFF4
-9ECRE5tNqUPU2JmVwILdHMu94kQxFtLntmIqiPgslLoMr2KQ71cfwQcPcwKBgQCk
-iNKtqCFf+qs26iKonA6iZyV+eXFR2rT6RvAV114NBUxKzebBC6On/h2ECbymz3iH
-MTiM7NPF+jCKA3/f725WGLfEKF7yLhlknEMhvT0LQVpSlUiXEyf20tBiVXUew4QS
-fsDtF2bQRtvbEfzOezu5eDCmnGJJNmpmIHLevH+8EQKBgF9Ff09RISQJHbABka8f
-wj8sdBKWG3TUQ2SwQ9U3L/Y/unuyaRUF+J3wFRYBMQGu0jzLG5TFfAVZAc3VJCBj
-xG6K8WnJS6OM9ycV0qBa2WnkC7M7uAt4K9IEIqlOljY/R2tBN7qHZwE7nCLS88rv
-L5YWIiKp71SlXyoGLfM0h7bl
------END PRIVATE KEY-----</llave_pem>
-         <llave_password xsi:type="xsd:string">12345678a</llave_password>
-      </urn:cancelar_cfdi_certs>
-   </soapenv:Body>
+               <llave_pem xsi:type="xsd:string">-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCJUeq8lhyXM8Ka
+megnYTt2UsISrihy/vhw+2Bt+ULUczpQtZ9rDTeMFXwtKoocAPd31yfqPdlj9dxK
+bQS5PmDe3rmpDvcNbGVmfKOMxCWzrWikDVhJVC1++lI6leMnOZHBymbMct2rslUo
+Nq1xhSG/2R97hI7Cgshge9CvNFyyD6U3h+s7tAggWgGhIqTf/SI6TAwzkp+N6ocu
++xdp6d7PjWP8Jao0E3Gcf79Uy7Mxhxh5Zi7A4e1VQHd392De3ZzSewCCeQUF9fqI
+7OGZOrEsEC66nb5SiyP+qzIQWUCKrMgg6gWzeXfLYzewFLpFK6fxYA1k7C7INQcE
+Nb40Vk9/AgMBAAECggEAbZFTP053WZ4PNNSBDIrkqzC1cbpMxBT1nxC0jItK68FV
+UnjYzs4o+Dlcb511vYp36sNeMeVPxBa0wx3hmv1OxgXpFh++uJM5BWGGDhekDY3b
+5KpRO5FTC/IoEl7udKnWx038YD126jzM/d1C30Ve/Hj+ScwnLMS1pWalyGZ7YAcw
+ka9gc13RtEwhNU0k/PKVEvOxk77g6hZoE/TgXN6lfLB3BQ9crRwn3NeUKi7vzKOJ
+hxdGe898u+Agva0VQPOmB9Lbaw8NuGlNeCa+P7wCpo/LjSpK/Hfp8Tcl/M/S+A1d
+fSfitc5PxAWCWHBus/Dix6R01I1Fr+/uPqGAyqqH4QKBgQDsLpJwPaNts52I1zbn
++CYe7L6UcQuqwtDIQ9Pt5eOs2KNBbgWIW7IWrfVIJ0los+LmFDln3uCHgcPRHnJm
+aSyDJ3qyNx73VtUz8ZRx0zqs2pbTUyUs9mF/nc/xpM0u7iCJ06q/S+AvyQPpmHCh
+0Lch4Gpj4u/eu7uU+hgmzJgVrQKBgQCU17CjVpXlHvw+gTM4yvpFU7yjm4RUNqFr
+1rRPZiV56c3wFYGVxTmFG3csCBxu+YrJtvdoQ/JbGR4VaXNXA/kC+YCh9dfYvG3h
+vqpvi8BIw/rJN59NCxPaz83/kEZWTpbAZP5rQBieGfZ4G0UMCbG5i6+YHRtM8uRV
+tf221YZnWwKBgB9uq0qIyYFGEEcv7Ty+B8TB2TNEQDs/pi2g6UmV+ND+G+wPSmk1
+WuQtzqEFqX1nw2C/fExYmyUtnfPsy2jZwnTKAkhJkbN1OPaqxgjIBd0PUldZj28G
+cz9ar1wHhM8kHex54RWIcZOqevzRrtu6PUUi6sXUY/wOnA5dom03eV4ZAoGAZAXC
+PTGtj4hQCIz4Z/z3TGlmRif3OERyG67wAr9pBdFZxDIfoA8mhU2cuylEOktVuhJL
+lnS6w/9QGSGBEgOobhhPGgfEonCWAvMHQ+iNMhkJSfkoAzUjhZLKIyjIK62qXuY/
+lsE/Cdf2qmXg86L8HO1C9hzxQLelO/gN5LT/GisCgYEAh41EQHIC8PbXDwbuHmUG
+QOAJYC0DkMbQ6EIXrFZ/jTkrat0H5u3KF//6S8SfPMuk68EwDBKWlulSyv6AcfJr
+NY6dwreRfoYsuu+Gh+rC7FW+rFiUAjc6Tzfz21oVZ/l/T2HhFcMkCy7sFRtbXcAK
+pMwSEnQuw3fiABu38MQJNHw=
+-----END PRIVATE KEY-----
+</llave_pem>
+            </urn:cancelar_cfdi>
+         </soapenv:Body>
 </soapenv:Envelope>
 ```
 
 Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
 
-![](http://i.imgur.com/UI0JkHw.png)
+![](https://i.imgur.com/uvHaSI0.png)
