@@ -148,20 +148,20 @@ Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** d
 
 ```
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
-         <soapenv:Header/>
-         <soapenv:Body>
-            <urn:cancelar_cfdi soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
-               <username xsi:type="xsd:string">AAA010101000</username>
-               <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
-               <rfc_emisor xsi:type="xsd:string">PZA000413788</rfc_emisor>
-               <folios xsi:type="urn:folios">
-                  <folio>
-                    <uuid xsi:type="xsd:string">27863E31-0E25-43CE-B148-3764D94C1EEA</uuid>
-                    <rfc_receptor xsi:type="xsd:string">TME960709LR2</rfc_receptor>
-                    <total xsi:type="xsd:string">5001</total>
-                  </folio>
-               </folios>
-               <cert_pem xsi:type="xsd:string">-----BEGIN CERTIFICATE-----
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:cancelar_cfdi soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <username xsi:type="xsd:string">AAA010101000</username>
+         <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
+         <rfc_emisor xsi:type="xsd:string">PZA000413788</rfc_emisor>
+         <folios xsi:type="urn:folios">
+	         <folio>
+		         	<uuid xsi:type="xsd:string">6B0D9A22-CE8E-4F00-BFD4-4DD294D6A772</uuid>
+		         	<rfc_receptor xsi:type="xsd:string">TME960709LR2</rfc_receptor>
+		         	<total xsi:type="xsd:string">5001</total>
+	         	</folio>
+         </folios>
+         <cert_pem xsi:type="xsd:string">-----BEGIN CERTIFICATE-----
 MIIGJzCCBA+gAwIBAgIUMjAwMDEwMDAwMDAzMDAwMjI3NjAwDQYJKoZIhvcNAQEL
 BQAwggFmMSAwHgYDVQQDDBdBLkMuIDIgZGUgcHJ1ZWJhcyg0MDk2KTEvMC0GA1UE
 CgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNV
@@ -197,7 +197,7 @@ ECjMNYaFsC3L8XTc9+ck97zQqlDvYPCzQJtXyIUdzvvV0bLpavwkNipb16QbSHkO
 hjdkNQmGDnadkZX75k0rcqmRiCr2vHVxkeiUL1Pasdp3dVUvX7ATEqQMZw==
 -----END CERTIFICATE-----
 </cert_pem>
-               <llave_pem xsi:type="xsd:string">-----BEGIN PRIVATE KEY-----
+         <llave_pem xsi:type="xsd:string">-----BEGIN PRIVATE KEY-----
 MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCJUeq8lhyXM8Ka
 megnYTt2UsISrihy/vhw+2Bt+ULUczpQtZ9rDTeMFXwtKoocAPd31yfqPdlj9dxK
 bQS5PmDe3rmpDvcNbGVmfKOMxCWzrWikDVhJVC1++lI6leMnOZHBymbMct2rslUo
@@ -226,8 +226,8 @@ NY6dwreRfoYsuu+Gh+rC7FW+rFiUAjc6Tzfz21oVZ/l/T2HhFcMkCy7sFRtbXcAK
 pMwSEnQuw3fiABu38MQJNHw=
 -----END PRIVATE KEY-----
 </llave_pem>
-            </urn:cancelar_cfdi>
-         </soapenv:Body>
+      </urn:cancelar_cfdi>
+   </soapenv:Body>
 </soapenv:Envelope>
 ```
 
