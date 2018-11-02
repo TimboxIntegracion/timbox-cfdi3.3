@@ -233,4 +233,36 @@ pMwSEnQuw3fiABu38MQJNHw=
 
 Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
 
-![](https://i.imgur.com/uvHaSI0.png)
+![](https://i.imgur.com/F7mRjfJ.png)
+
+### Consultar Estatus
+El servicio de “consultar_estatus” se utiliza para la consulta del estatus del CFDI, este servicio pretende proveer una forma alternativa de consulta que requiera verificar el estado de un comprobante en bases de datos del SAT. 
+
+Para utilizar el servicio son necesarias las credenciales asignadas, UUID, RFC del emisor, RFC del receptor y el Total.
+
+Crear un cliente para hacer la petición de cancelación al webservice:
+
+Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **consultar_estatus**:
+
+![](https://i.imgur.com/RVyGwDm.png)
+
+```
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:consultar_estatus soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <username xsi:type="xsd:string">AAA010101000</username>
+         <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
+         <uuid xsi:type="xsd:string">6B0D9A22-CE8E-4F00-BFD4-4DD294D6A772</uuid>
+         <rfc_emisor xsi:type="xsd:string">PZA000413788</rfc_emisor>
+         <rfc_receptor xsi:type="xsd:string">TME960709LR2</rfc_receptor>
+         <total xsi:type="xsd:string">5001</total>
+      </urn:consultar_estatus>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
+
+![](https://i.imgur.com/0bm5PlD.png)
+
