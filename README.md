@@ -244,7 +244,7 @@ Crear un cliente para hacer la petición de cancelación al webservice:
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **consultar_estatus**:
 
-![](https://i.imgur.com/RVyGwDm.png)
+![](https://i.imgur.com/Uldze5o.png)
 
 ```
 <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
