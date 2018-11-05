@@ -233,7 +233,7 @@ pMwSEnQuw3fiABu38MQJNHw=
 
 Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
 
-![](https://i.imgur.com/XzRVWlX.png)
+![](https://i.imgur.com/ipYKkUf.png)
 
 ### Consultar Estatus
 El servicio de “consultar_estatus” se utiliza para la consulta del estatus del CFDI, este servicio pretende proveer una forma alternativa de consulta que requiera verificar el estado de un comprobante en bases de datos del SAT. 
