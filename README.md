@@ -264,5 +264,5 @@ Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** d
 
 Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
 
-![](https://i.imgur.com/0bm5PlD.png)
+![](https://i.imgur.com/SNy0sWd.png)
 
