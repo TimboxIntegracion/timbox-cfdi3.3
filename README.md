@@ -266,3 +266,101 @@ Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez h
 
 ![](https://i.imgur.com/SNy0sWd.png)
 
+
+### Procesar Respuesta
+El servicio de “procesar_respuesta” se utiliza para realizar la petición de aceptación/rechazo de la solicitud de cancelación que se encuentra en espera de dicha resolución por parte del receptor del documento al servicio del SAT.
+
+Para utilizar el servicio son necesarias las credenciales asignadas, RFC del receptor, un arreglo de nodos respuestas (el cual debe contener los elementos UUID, RFC del Emisor, Total y Respuesta la cual puede ser "A" de Aceptacion y "R" de rechazo), el certificado y llave convertidos en PEM (el contenido del archivo)
+
+Crear un cliente para hacer la petición de cancelación al webservice:
+
+Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **procesar_respuesta**:
+
+![](https://i.imgur.com/RVyGwDm.png)
+
+```
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:procesar_respuesta soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <username xsi:type="xsd:string">AAA010101000</username>
+         <password xsi:type="xsd:string">h6584D56fVdBbSmmnB</password>
+         <rfc_receptor xsi:type="xsd:string">TME960709LR2</rfc_receptor>
+         <respuestas xsi:type="urn:respuestas">
+         		<folios_respuestas>
+		         	<uuid xsi:type="xsd:string">F3D2B562-2DD0-4566-8517-E36F80AE5B46</uuid>
+		         	<rfc_emisor xsi:type="xsd:string">PZA000413788</rfc_emisor>
+		         	<total xsi:type="xsd:string">5001</total>
+		         	<respuesta xsi:type="xsd:string">A</respuesta>
+	         	</folios_respuestas>
+         </respuestas>
+         <cert_pem xsi:type="xsd:string">-----BEGIN CERTIFICATE-----
+MIIFzDCCA7SgAwIBAgIUMjAwMDEwMDAwMDAzMDAwMjI3NjMwDQYJKoZIhvcNAQEL
+BQAwggFmMSAwHgYDVQQDDBdBLkMuIDIgZGUgcHJ1ZWJhcyg0MDk2KTEvMC0GA1UE
+CgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNV
+BAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNp
+w7NuMSkwJwYJKoZIhvcNAQkBFhphc2lzbmV0QHBydWViYXMuc2F0LmdvYi5teDEm
+MCQGA1UECQwdQXYuIEhpZGFsZ28gNzcsIENvbC4gR3VlcnJlcm8xDjAMBgNVBBEM
+BTA2MzAwMQswCQYDVQQGEwJNWDEZMBcGA1UECAwQRGlzdHJpdG8gRmVkZXJhbDES
+MBAGA1UEBwwJQ295b2Fjw6FuMRUwEwYDVQQtEwxTQVQ5NzA3MDFOTjMxITAfBgkq
+hkiG9w0BCQIMElJlc3BvbnNhYmxlOiBBQ0RNQTAeFw0xNjEwMjEyMDU0MDFaFw0y
+MDEwMjEyMDU0MDFaMIG4MRwwGgYDVQQDExNJTk1PQiBFRE1BIFNBIERFIENWMRww
+GgYDVQQpExNJTk1PQiBFRE1BIFNBIERFIENWMRwwGgYDVQQKExNJTk1PQiBFRE1B
+IFNBIERFIENWMSUwIwYDVQQtExxUTUU5NjA3MDlMUjIgLyBIRUdUNzYxMDAzNFMy
+MR4wHAYDVQQFExUgLyBIRUdUNzYxMDAzTURGUk5OMDkxFTATBgNVBAsUDFBydWVi
+YXNfQ0ZESTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJgqZ+ezJyeJ
+XACMK8ehFp64ecAl8jfYKB4xMJy0RRb+qXKRewxtLojiTFECWdCx283tEkdHUj8b
+LzsCfFAMnsP2G4CS2aE2/1LLCHoZpdImaasLX1YJL2bUzxKQKi+RlL63M49yyfvG
+BjEgG7f6TMwVSUSbgDFpYAFHqx4LK+p2GVHuUUzoiIm8xRYaW1YPMa457be5W8ws
+jw0nGRLfo8hRIjPHedkwtcqYPj57xsPXMfxWP45vOlW7GuLkMq/ECccHxJiPitiT
+hcDFKlf/mAR0kaux9LTffvWilA2uQAlyVyNVjqfdpvDdq4ycTaoIMYKrv/9R31dQ
+0AmdXT8cfbcCAwEAAaMdMBswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBsAwDQYJ
+KoZIhvcNAQELBQADggIBAF5kwvyBUp7Ad99DktzEhrJwnMQyhA79sVc4Ns2SpLON
+/cV244ZnG5hgXk2awKbHEiSj/ke7EhgEpGS818ERsj7eW/wRgugBZraVn48GOn6q
+X0uV9EjwWEGK5uT6IDN25igeXxVJHP3hn40fX2BPqsaqRP49YMxcOWD7mhWRh2E6
+BnoKYjgHVJbavUN6pjCBLmy4hKwfitbjqtUiiWOmBDvvmLFpEGXG8OXn2xladBUk
+fC4sfgMBpVZVuEV7RqAgCSCZ2xo6UEyd4KKpTjbdp0Tj5gw+NmiovAZHwU/NPRoj
+N95f/ibj7268LBr2DcO5rlmr7szwJ3dtwu86N7HkUxW3vo3qGHTVK2HRBArda9VN
+4pEyIL0Qt46ci5rFYXB2cCWU8XAh8gaZnxJoNTSY4A4yMJG9UfM/2rHC+YvOouIZ
+2kJZ2h+SwKOYGJOX749P/QeF4Z/L/ODs3E08bV7IQna1ZHmd6ydYhZVpheMgNoNn
+IG6jdzfyuo8NZAIIW/JGmPTANPCwTSHqBY1lmnp/oZNrkxGWtGhbltRfBoFQfTqC
+ZALm6fsVeQqHQ6a7W45FJ2RD1nltPSdniMo3Iz/t4eHCjFvM3aORvA9oJEPr5Zzz
+BV2fQOXkyS8QdsSVb5ZmJG+FqZKKlsiaX6xhqK6gqTLyJN+7/yr9T/ZZ4M7VrRoL
+-----END CERTIFICATE-----</cert_pem>
+         <llave_pem xsi:type="xsd:string">-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCYKmfnsycniVwA
+jCvHoRaeuHnAJfI32CgeMTCctEUW/qlykXsMbS6I4kxRAlnQsdvN7RJHR1I/Gy87
+AnxQDJ7D9huAktmhNv9Sywh6GaXSJmmrC19WCS9m1M8SkCovkZS+tzOPcsn7xgYx
+IBu3+kzMFUlEm4AxaWABR6seCyvqdhlR7lFM6IiJvMUWGltWDzGuOe23uVvMLI8N
+JxkS36PIUSIzx3nZMLXKmD4+e8bD1zH8Vj+ObzpVuxri5DKvxAnHB8SYj4rYk4XA
+xSpX/5gEdJGrsfS03371opQNrkAJclcjVY6n3abw3auMnE2qCDGCq7//Ud9XUNAJ
+nV0/HH23AgMBAAECggEAYxh6wnHxtdXGjLS8bi2CRatt3qzXqXaj6cWvGt5rgCYo
+w+vqbpVMEOkPOlKFm1u5Acq6dKEF9wMFJzDfNGKDoqrMDleUU2E1tf1zb9D0JH/P
+oQyu8aDZteYxVK1+S6xLakh0056127mCnsuCQbZH/UB/jqaWPZeaZjr+PXqZBv8O
+NDMzomZaIKSUqwwiFi/vSunrrbGEkcCjrLK7mtHVNOx4HuuGSwixIUbBPefbR2Po
+2fIATTKTIGlAzZrKaVWW3730ZNO4WJeKvahoHrLiiFz9pCWr4h+WOSWQDE3MNrCr
+LVIusjciKZ6bNkYK15p0SmQNh1A8ZCC/xx2zo0pHgQKBgQDmF+QgS6cWdwuDqus3
+weShruOaIpzgp01h2+g5sl93Wbh7hXKgAP3MUDbdd/j8ZZ0R1hL2ChWw0t9Ma/29
+o+sTSs+m4kTRiNf4qq6VoWlIdQ8CpEIEdBp5RC/Oxd1vNHSV0POQSM1v27lzOgkG
+Aaq16vTCtm8LcztFE9Mys7Om+QKBgQCpTFyVKful82n3SLnhfVAypkUPcjHqsIZf
+KSVLdDCdQJGRKdKvMcr/4A+xRC1SdUPE5RUEIq7aQIRe27H2JjD3USXPGJCC0pah
+ct9QxZajqIsw4CpodOiTuXBphaIfjGibSCE83pKQbRfoKIhtuVHxaizLBjNGvapS
+JYzG368GLwKBgQDH4dFHTPElztyt0PjtQv6+hhMqfw8RCcVrUYH3PUE5iTN9+nuN
+C89ugfBnjCU7/XnpWLK4EiKtrUJWPSn8aD16UO765m0qKVqUppFrYwD29NnJTbAb
+9lBZMCbn1XN7e3IcA5zSpqvwlEwSEURtd105E5b0306v/7ZpV8OMtBdI4QKBgGF/
+38XsAshk8f7+/EYXdEtnJFir7IF7njdJq/fTd3foyqyuSG6rH3zTHlZ5rBxT+m53
+e+4Ax3BcPZ+fqNLY1dRpAHxPalJdU3CxhlivIn0oQNkqEGJOCe+hmVK8Kk0/ALOF
+C9dRW1kf6ufCCCgg1UdSXW+jJ36zFlbu1y9lfRfzAoGALViSE59U7+pOk324H5yh
+rAotmRzydr94AAkM7b4KWT6Lm9KNO9jhJlpcyHMOqT+yvDzNSBcpCMh+bCFwNUCh
+oqM8++PNBZhYg8uRr236Z2dwQLE8W3uvlGVkmld/w1oSss/IVGIW9Fkzq+FmXst6
+nG6Qen20YfqezK2yWdYNDnU=
+-----END PRIVATE KEY-----</llave_pem>
+      </urn:procesar_respuesta>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+Después daremos click al botón ![](http://i.imgur.com/zp9cg7E.png) y una vez hecho esto nos saldrá el resultado.
+
+![](https://i.imgur.com/bf34dv1.png)
+
