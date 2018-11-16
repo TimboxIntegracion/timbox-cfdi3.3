@@ -17,7 +17,7 @@ Timbrado:
 - [Timbox Pruebas](https://staging.ws.timbox.com.mx/timbrado_cfdi33/wsdl)
 - [Timbox Producción](https://sistema.timbox.com.mx/timbrado_cfdi33/wsdl)
 
-Cancelacion:
+Cancelación:
 - [Timbox Pruebas](https://staging.ws.timbox.com.mx/cancelacion/wsdl)
 - [Timbox Producción](https://sistema.timbox.com.mx/cancelacion/wsdl)
 
