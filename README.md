@@ -8,7 +8,7 @@ El 1 de julio de 2017 entra en vigor la versión 3.3 de la factura, no obstante 
 
 [Documentación del SAT para emitir CFDI con la nueva versión 3.3](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/Anexo_20_version3.3.aspx)
 
-Ejemplo de comó utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html). Utilizamos la versión open source.
+Ejemplo de cómo utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html). Utilizamos la versión open source.
 
 Se deberá hacer uso de la URL que hace referencia al WSDL, en cada petición realizada:
 
@@ -63,7 +63,7 @@ En este ejemplo el número de certificado sería: 30001000000300023708
 **<b>Paso 3</b>**
    
 Generar sello digital para los CFDIs
-Tal como lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet". Para esto usamos la siguiente herramienta, el programa [OPENSSL](https://www.openssl.org/) en el cual utilizamos los siguientes comandos de consola:
+Tal cómo lo específica el anexo 20 en el inciso I Sección B "Generación de sellos digitales para comprobantes fiscales digitales a través de Internet". Para esto usamos la siguiente herramienta, el programa [OPENSSL](https://www.openssl.org/) en el cual utilizamos los siguientes comandos de consola:
 
 1. Obtener el PEM del certificado y el contenido sin los encabezados agregarlo al atributo Certificado en XML.
 ```
@@ -113,13 +113,13 @@ Para iniciar con el ejemplo del timbrado es necesario crear el proyecto con el U
 
 ## Timbrar CFDI
 
-Para hacer una petición de timbrado de un CFDI, deberá enviar las credenciales asignadas, así como el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la página [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
+Para hacer una petición de timbrado de un CFDI, deberá enviar las credenciales asignadas, así cómo el XML que desea timbrar convertido a una cadena base64, para ello recomendamos utilizar la página [https://www.base64encode.org/](https://www.base64encode.org/) en ella se puede pegar el XML deseado y se obtiene la cadena en base64:
 
 Para hacer la petición solo necesitamos hacer doble click sobre **Request 1** debajo de **timbrar_cfdi**:
 
      ![](http://i.imgur.com/wxkGZ25.png)
      
-Después de dar click nos aparecerá la siguiente ventana, debemos modificar la petición usando nuestros datos, como el siguiente código:
+Después de dar click nos aparecerá la siguiente ventana, debemos modificar la petición usando nuestros datos, cómo el siguiente código:
 ![](http://i.imgur.com/YeoGMB6.png)
 ```    
  <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:WashOut">
