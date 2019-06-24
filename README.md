@@ -6,7 +6,7 @@ Aviso:
 
 El 1 de julio de 2017 entra en vigor la versión 3.3 de la factura, no obstante podrás continuar emitiendo facturas en la versión 3.2 hasta el 30 de noviembre; a partir del 1 de diciembre, la única versión válida para emitir las facturas será la versión 3.3
 
-[Documentación del SAT para emitir CFDI con la nueva versión 3.3](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Paginas/Anexo_20_version3.3.aspx)
+[Documentación del SAT para emitir CFDI con la nueva versión 3.3](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/anexo_20_version3-3.htm)
 
 Ejemplo de cómo utilizar el servicio con [SOAP UI](https://www.soapui.org/downloads/soapui.html). Utilizamos la versión open source.
 
@@ -30,7 +30,7 @@ Para poder timbrar el CFDI, hay que considerado los siguientes pasos:
   
 - [Esquema XSD](http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd) 
    
-- [Estandar PDF](http://www.sat.gob.mx/informacion_fiscal/factura_electronica/Documents/cfdv33.pdf)
+- [Estándar PDF](http://omawww.sat.gob.mx/tramitesyservicios/Paginas/documentos/cfdv33.pdf)
    
 **<b>Paso 1.1 Obtener número de certificado</b>**
 Si no se cuenta con el número de certificado se puede obtener utilizando un comando de OpenSSL:
